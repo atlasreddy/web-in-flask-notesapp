@@ -1,0 +1,9 @@
+language: python
+
+python:
+  - 3.7
+install:
+  - pip install -U setuptools
+  - pip install -r requirements.txt
+script:
+  - flake8 . --exclude --max-line-length=400
