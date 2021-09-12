@@ -1,6 +1,5 @@
 from flask import Blueprint, request, flash, redirect, url_for
 from flask.templating import render_template
-import flask_sqlalchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, login_required, current_user, logout_user
 
@@ -55,7 +54,7 @@ def login_view():
             if check_password_hash(user.password, password):
                 print("User is validated... Logging in")
                 login_user(user, remember=True)
-                flash("Logged in Successfully!" ,category="success")
+                flash("Logged in Successfully!", category="success")
                 return redirect(url_for('views.home_view'))
             else:
                 flash("Incorrect Password!", category="error")
@@ -70,4 +69,3 @@ def login_view():
 def logout_view():
     logout_user()
     return redirect(url_for('auths.login_view'))
-
