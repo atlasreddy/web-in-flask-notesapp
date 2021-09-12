@@ -6,4 +6,4 @@ install:
   - pip install -U setuptools
   - pip install -r requirements.txt
 script:
-  - flake8 . --exclude --max-line-length=400
+  - flake8 . --max-line-length=400
